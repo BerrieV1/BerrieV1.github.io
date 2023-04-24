@@ -16,7 +16,7 @@ def generate_html(directory, template, jinja_env):
             yaml_var = yaml.safe_load(yaml_content)
             if directory == "posts":
                 posts.append(yaml_var)
-            output_file = os.path.join("html", file.replace(".md", ".html"))
+            output_file = os.path.join("docs", file.replace(".md", ".html"))
             with open(output_file, "w") as output:
                 output.write(html_template.render(**yaml_var, content=markdown.markdown(md_content), posts=posts))
 
